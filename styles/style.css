@@ -1,0 +1,801 @@
+/* Reset & base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+body {
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #ED6D6D 0%, #EF4E2A 25%, #D36417 50%, #D9A800 100%);
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header */
+/* .site-header {
+  background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.02));
+  padding: 28px 36px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.logo-mark {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.08), rgba(0,0,0,0.2)), #3b1416;
+  position: relative;
+  box-shadow: inset 0 3px 0 rgba(255,255,255,0.05), 0 6px 0 rgba(0,0,0,0.12);
+}
+.logo-mark::before{
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border-radius: 50%;
+  background: conic-gradient(#ff8a80 0 20%, transparent 20% 40%, #ffb27a 40% 60%, transparent 60% 80%, #ff8a80 80% 100%);
+  opacity: 0.18;
+  filter: blur(1px);
+}
+.logo-text {
+  font-family: "Bungee", cursive;
+  letter-spacing: 1px;
+  color: #f5e9e9;
+  font-size: 14px;
+  text-transform: uppercase;
+  opacity: 0.95;
+}
+.wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+/* header */
+
+.header {
+  background-color: black;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #f4f4f4;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+    color: white;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+    background-color: black;
+    color: white;
+    margin-top: 30px;
+    margin-right: 20px;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+
+
+/* Nav */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 26px;
+  margin-left: auto;
+}
+.main-nav a {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #6b0a0a;
+  color: #fff;
+  font-family: "Bungee", cursive;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: inset 0 -6px 0 rgba(0,0,0,0.25), 0 6px 0 rgba(0,0,0,0.12);
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+.main-nav a.active {
+  background: #b82a21;
+  transform: translateY(-1px);
+}
+
+/* Hero title (rounded orange pill with thick black outline) */
+.hero {
+  display: flex;
+  justify-content: center;
+  margin: 42px 0 20px;
+}
+.hero-title{
+  font-family: "Bungee", cursive;
+  font-size: 52px;
+  color: #fff;
+  background: linear-gradient(180deg,#ff7a2f,#f05a2b);
+  padding: 16px 42px;
+  border-radius: 14px;
+  border: 8px solid #0a0a0a;
+  box-shadow: 0 8px 0 rgba(0,0,0,0.35);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  max-width: 1100px;
+  text-align: center;
+}
+
+/* Featured image frame */
+.feature-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 16px 22px 80px;
+}
+.feature-frame {
+  width: min(1100px, 95%);
+  background: transparent;
+  border: 6px solid #0a0a0a;
+  border-radius: 8px;
+  padding: 8px; /* small inner gap like the reference */
+  box-shadow: 0 10px 0 rgba(0,0,0,0.4);
+}
+.feature-img {
+  display: block;
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: inset 0 3px 0 rgba(255,255,255,0.03);
+}
+
+/* Contact card */
+.contact-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 8px 20px 80px;
+}
+.contact-card {
+  width: min(860px, 85%);
+  background: #000;
+  padding: 36px;
+  border-radius: 10px;
+  border: 6px solid rgba(0,0,0,0.85);
+  box-shadow: 0 12px 0 rgba(0,0,0,0.5);
+}
+
+/* Labels and inputs */
+.contact-card label {
+  display: block;
+  font-family: "Bungee", cursive;
+  font-size: 22px;
+  color: #fff;
+  text-align: left;
+  margin-bottom: 12px;
+  margin-top: 6px;
+}
+.contact-card input,
+.contact-card textarea {
+  display: block;
+  width: 100%;
+  background: #fff;
+  border: none;
+  padding: 12px 14px;
+  border-radius: 2px;
+  outline: none;
+  font-size: 16px;
+  color: #111;
+  margin-bottom: 22px;
+}
+
+/* Make layout closer to original visual (massive left/right padding inside card) */
+.contact-card label { text-align:center; }
+.contact-card input,
+.contact-card textarea {
+  width: 86%;
+  margin-left: 7%;
+  margin-right: 7%;
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,0.05);
+}
+
+/* Final spacing */
+.spacer { height: 6px; }
+
+/* Content section (new styles) */
+.content-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 18px 28px 80px;
+}
+.content-grid {
+  width: min(1100px, 95%);
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 20px;
+  align-items: start;
+}
+.content-wrap button{
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-family: "Bungee", cursive;
+  font-size: 16px;
+  color: #fff;
+  background: #6b0a0a;
+  border: none;
+  border-radius: 8px;
+  box-shadow: inset 0 -6px 0 rgba(0,0,0,0.25), 0 6px 0 rgba(0,0,0,0.12);
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+/* Left big text card */
+.text-card{
+  background: linear-gradient(180deg, rgba(255,122,47,0.95), rgba(217,168,0,0.95));
+  padding: 28px;
+  border-radius: 10px;
+  border: 6px solid #0a0a0a;
+  box-shadow: 0 10px 0 rgba(0,0,0,0.45);
+  font-family: "Bungee", cursive;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.6px;
+}
+
+/* Force paragraphs spacing similar to reference */
+.text-card p { margin-bottom: 14px; }
+
+/* Right column stacked cards */
+.side-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.side-card {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  border: 6px solid #0a0a0a;
+  box-shadow: 0 8px 0 rgba(0,0,0,0.35);
+  overflow: hidden;
+}
+.chart-card { background: #fff; }
+.image-card { background: #fff; }
+
+/* Images inside side cards */
+.chart-img, .mini-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Chart card specific sizing to match reference */
+.chart-card { height: 220px; }
+.chart-img { height: 100%; object-fit: contain; background:#fff; }
+
+/* Small image card height */
+.image-card { height: 370px; }
+.mini-img { height: 100%; object-fit: cover; }
+
+/* Sources section (new styles) */
+.sources-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 18px 28px 80px;
+}
+
+.sources-card {
+  width: min(1100px, 95%);
+  background: linear-gradient(180deg, rgba(255,122,47,0.95), rgba(217,168,0,0.95));
+  padding: 34px;
+  border-radius: 10px;
+  border: 6px solid #0a0a0a;
+  box-shadow: 0 10px 0 rgba(0,0,0,0.45);
+  font-family: "Bungee", cursive;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.6px;
+}
+.sources-card pre{
+  font-family: "Bungee", cursive;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.6px;
+  margin-right: 20px;
+}
+/* tighten paragraph spacing to match the reference */
+.sources-card p { margin-bottom: 14px; }
+
+/* Benefits section (new styles) */
+.benefits-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  padding: 18px 28px 80px;
+}
+
+.benefits-card {
+  width: min(1100px, 95%);
+  background: linear-gradient(180deg, rgba(255,122,47,0.95), rgba(217,168,0,0.95));
+  padding: 28px;
+  border-radius: 10px;
+  border: 6px solid #0a0a0a;
+  box-shadow: 0 10px 0 rgba(0,0,0,0.45);
+  font-family: "Bungee", cursive;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.6px;
+}
+
+/* text spacing like the reference */
+.benefits-card p { margin-bottom: 14px; }
+
+/* bottom two image cards */
+.benefits-bottom {
+  width: min(1100px, 95%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.bottom-card {
+  background: #fff;
+  border-radius: 8px;
+  border: 6px solid #0a0a0a;
+  box-shadow: 0 8px 0 rgba(0,0,0,0.35);
+  overflow: hidden;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-card .bottom-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+
+/* adjust for wider look on large screens to mimic the reference proportions */
+@media (min-width: 1200px) {
+  .benefits-card { padding: 30px; font-size: 19px; }
+  .bottom-card { height: 220px; }
+}
+
+/* stack on smaller screens */
+@media (max-width: 920px) {
+  .benefits-bottom { grid-template-columns: 1fr; }
+  .bottom-card { height: 180px; }
+}
+@media (max-width: 1000px) {
+  .hero-title { font-size: 44px; padding: 12px 28px; }
+  .feature-img { height: 360px; }
+}
+@media (max-width: 720px) {
+  .main-nav ul { gap: 10px; }
+  .logo-mark { width: 64px; height: 64px; }
+  .hero-title { font-size: 34px; padding: 10px 18px; border-width:6px; }
+  .feature-img { height: 220px; }
+}
+
+
+
+.footer{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  align-items: center;
+  text-align: center;
+}
+
+.left-footer{
+  width: 40%;
+  height: 30px;
+}
+
+.left-footer p{
+  float: right;
+  margin-right: 80px;
+}
+.right-footer{
+  display: flex;
+  width: 60%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  
+}
+
+/* Image transition effects: applies to all <img> and common image classes */
+img,
+.feature-img,
+.chart-img,
+.mini-img,
+.bottom-img,
+.logo-mark {
+  -webkit-transition: transform 280ms cubic-bezier(.2,.8,.2,1), filter 280ms ease, opacity 220ms ease;
+  transition: transform 280ms cubic-bezier(.2,.8,.2,1), filter 280ms ease, opacity 220ms ease;
+  will-change: transform, filter, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* Hover / focus (keyboard-accessible) */
+img:hover,
+img:focus,
+.feature-img:hover,
+.feature-img:focus,
+.chart-img:hover,
+.chart-img:focus,
+.mini-img:hover,
+.mini-img:focus,
+.bottom-img:hover,
+.bottom-img:focus,
+.logo-mark:hover,
+.logo-mark:focus {
+  transform: translateZ(0) scale(1.03);
+  filter: brightness(1.04) saturate(1.03);
+  opacity: 0.99;
+}
+
+/* Active (press) feedback */
+img:active,
+.feature-img:active,
+.chart-img:active,
+.mini-img:active,
+.bottom-img:active,
+.logo-mark:active {
+  transform: scale(0.985);
+  transition-duration: 120ms;
+}
+.header {
+  background-color: black;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  width: 100%;
+  z-index: 3;
+
+  /* smooth header transitions */
+  transition: background-color 240ms ease, box-shadow 240ms ease, transform 200ms ease;
+  -webkit-transition: background-color 240ms ease, box-shadow 240ms ease, transform 200ms ease;
+}
+
+/* subtle lift and stronger shadow on hover (mouse) and focus (keyboard) */
+.header:hover,
+.header:focus-within {
+  background-color: rgba(0,0,0,0.92);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  transform: translateY(-3px);
+}
+
+/* menu links: smooth color/background changes */
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+  transition: color 180ms ease, background-color 180ms ease, transform 160ms ease;
+  -webkit-transition: color 180ms ease, background-color 180ms ease, transform 160ms ease;
+  cursor: pointer;
+}
+
+/* hover/focus state for links */
+.header li a:hover,
+.header li a:focus {
+  color: #EF4E2A;                 /* accent color */
+  background-color: rgba(255,255,255,0.06);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* logo interactions */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  transition: transform 220ms ease;
+}
+
+.logo-text a { transition: color 180ms ease; }
+
+.logo:hover .logo-mark,
+.logo:focus-within .logo-mark {
+  transform: scale(1.06) rotate(-4deg);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+}
+
+/* Image transition effects: applies to all <img> and common image classes */
+img,
+.feature-img,
+.chart-img,
+.mini-img,
+.bottom-img,
+.logo-mark {
+  -webkit-transition: transform 280ms cubic-bezier(.2,.8,.2,1), filter 280ms ease, opacity 220ms ease;
+  transition: transform 280ms cubic-bezier(.2,.8,.2,1), filter 280ms ease, opacity 220ms ease;
+  will-change: transform, filter, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* Hover / focus (keyboard-accessible) */
+img:hover,
+img:focus,
+.feature-img:hover,
+.feature-img:focus,
+.chart-img:hover,
+.chart-img:focus,
+.mini-img:hover,
+.mini-img:focus,
+.bottom-img:hover,
+.bottom-img:focus,
+.logo-mark:hover,
+.logo-mark:focus {
+  transform: translateZ(0) scale(1.03);
+  filter: brightness(1.04) saturate(1.03);
+  opacity: 0.99;
+}
+
+/* Active (press) feedback */
+img:active,
+.feature-img:active,
+.chart-img:active,
+.mini-img:active,
+.bottom-img:active,
+.logo-mark:active {
+  transform: scale(0.985);
+  transition-duration: 120ms;
+}
+.header {
+  background-color: black;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  width:100%;
+  z-index:3;
+
+  /* smooth header transitions */
+  transition:background-color 240ms ease, box-shadow 240ms ease, transform 200ms ease;
+  -webkit-transition:background-color 240ms ease, box-shadow 240ms ease, transform 200ms ease;
+}
+
+/* subtle lift and stronger shadow on hover (mouse) and focus (keyboard) */
+.header:hover,
+.header:focus-within {
+  background-color: rgba(0,0,0,0.92);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  transform: translateY(-3px);
+}
+
+/* menu links: smooth color/background changes */
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+  transition: color 180ms ease, background-color 180ms ease, transform 160ms ease;
+  -webkit-transition: color 180ms ease, background-color 180ms ease, transform 160ms ease;
+  cursor: pointer;
+}
+
+/* hover/focus state for links */
+.header li a:hover,
+.header li a:focus {
+  color: #EF4E2A;                 /* accent color */
+  background-color: rgba(255,255,255,0.06);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* logo interactions */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  transition: transform 220ms ease;
+}
+
+.logo-text a { transition: color 180ms ease; }
+
+.logo:hover .logo-mark,
+.logo:focus-within .logo-mark {
+  transform: scale(1.06) rotate(-4deg);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+}
+
+/* Image transition effects: applies to all <img> and common image classes */
+img,
+.feature-img,
+.chart-img,
+.mini-img,
+.bottom-img,
+.logo-mark {
+  -webkit-transition: transform 280ms cubic-bezier(.2,.8,.2,1), filter 280ms ease, opacity 220ms ease;
+  transition: transform 280ms cubic-bezier(.2,.8,.2,1), filter 280ms ease, opacity 220ms ease;
+  will-change: transform, filter, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* Hover / focus (keyboard-accessible) */
+img:hover,
+img:focus,
+.feature-img:hover,
+.feature-img:focus,
+.chart-img:hover,
+.chart-img:focus,
+.mini-img:hover,
+.mini-img:focus,
+.bottom-img:hover,
+.bottom-img:focus,
+.logo-mark:hover,
+.logo-mark:focus {
+  transform: translateZ(0) scale(1.03);
+  filter: brightness(1.04) saturate(1.03);
+  opacity: 0.99;
+}
+
+/* Active (press) feedback */
+img:active,
+.feature-img:active,
+.chart-img:active,
+.mini-img:active,
+.bottom-img:active,
+.logo-mark:active {
+  transform: scale(0.985);
+  transition-duration: 120ms;
+}
+
+img[src$="whatIsIt2.png"],
+img[src*="/whatIsIt2.png"] {
+  height: 520px;         /* increase this value to make it taller/shorter */
+  max-height: none;
+  width: 100%;
+  object-fit: cover;     
+  display: block;
+}
+
+
+@media (max-width: 1000px) {
+  img[src$="whatIsIt2.png"],
+  img[src*="/whatIsIt2.png"] {
+    height: 360px;
+  }
+}
+
+
+.contact-card button{
+  width: 140px;
+  height: 40px;
+  position: absolute;
+  left: 560px;
+}
